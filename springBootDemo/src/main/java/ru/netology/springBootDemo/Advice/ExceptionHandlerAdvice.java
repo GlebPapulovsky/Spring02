@@ -13,10 +13,10 @@ public class ExceptionHandlerAdvice {
 
     @ExceptionHandler(InvalidCredentials.class)
     public ResponseEntity<String> rtHandler(InvalidCredentials ex) {
-        return new ResponseEntity<>("InvalidCredentialsException", HttpStatus.I_AM_A_TEAPOT);
+        return new ResponseEntity<>("InvalidCredentialsException", HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler(UnauthorizedUser.class)
     public ResponseEntity<String> uuHandler(UnauthorizedUser ex) {
-        return new ResponseEntity<>("UnauthorizedUserException", HttpStatus.I_AM_A_TEAPOT);//HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>("UnauthorizedUserException", HttpStatus.UNAUTHORIZED);
     }
 }
